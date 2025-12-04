@@ -59,7 +59,7 @@ class FieldManager {
         $original_group_id = sanitize_key( $_POST['original_group_id'] ?? '' );
 
         if ( ! empty( $errors ) ) {
-            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'fields', 'errors' => urlencode( wp_json_encode( $errors ) ) ], admin_url( 'admin.php' ) ) );
+            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-fields', 'errors' => urlencode( wp_json_encode( $errors ) ) ], admin_url( 'admin.php' ) ) );
             exit;
         }
 
@@ -72,7 +72,7 @@ class FieldManager {
 
         do_action( 'my_cpt_ui_field_group_saved', $sanitized );
 
-        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'fields', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
+        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-fields', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
         exit;
     }
 
@@ -85,7 +85,7 @@ class FieldManager {
 
         $group_id = sanitize_key( $_POST['group_id'] ?? '' );
         if ( empty( $group_id ) ) {
-            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'fields' ], admin_url( 'admin.php' ) ) );
+            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-fields' ], admin_url( 'admin.php' ) ) );
             exit;
         }
 
@@ -95,7 +95,7 @@ class FieldManager {
 
         do_action( 'my_cpt_ui_field_group_deleted', $group_id );
 
-        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'fields', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
+        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-fields', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
         exit;
     }
 

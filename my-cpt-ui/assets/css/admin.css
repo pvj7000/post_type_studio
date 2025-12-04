@@ -198,6 +198,22 @@
     gap: 10px;
 }
 
+.my-cpt-ui__footer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.my-cpt-ui__doc-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.my-cpt-ui__doc-link:hover {
+    text-decoration: underline;
+}
+
 .my-cpt-ui__modal {
     position: fixed;
     inset: 0;

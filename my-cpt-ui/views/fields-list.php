@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <td><?php echo esc_html( count( $group['fields'] ?? [] ) ); ?></td>
                     <td>
                         <div class="my-cpt-ui__table-actions">
-                            <a class="button" href="<?php echo esc_url( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'fields', 'edit' => $group['group_id'] ], admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Edit', 'my-cpt-ui' ); ?></a>
+                            <a class="button" href="<?php echo esc_url( add_query_arg( [ 'page' => 'my-cpt-ui-fields', 'edit' => $group['group_id'] ], admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Edit', 'my-cpt-ui' ); ?></a>
                             <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="my-cpt-ui__inline-form my-cpt-ui__delete-form" data-confirm-message="<?php esc_attr_e( 'Delete this field group? This cannot be undone.', 'my-cpt-ui' ); ?>">
                                 <?php wp_nonce_field( 'my_cpt_ui_delete_field_group' ); ?>
                                 <input type="hidden" name="action" value="my_cpt_ui_delete_field_group" />
