@@ -1,0 +1,11 @@
+{
+  "name": "centraldev/post-type-studio",
+  "description": "Custom post type and taxonomy UI plugin.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "PostTypeStudio\\": "src/"
+    }
+  }
+}
