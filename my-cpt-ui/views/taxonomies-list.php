@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <td><span class="my-cpt-ui__badge is-active"><?php esc_html_e( 'Active', 'my-cpt-ui' ); ?></span></td>
                     <td>
                         <div class="my-cpt-ui__table-actions">
-                            <a class="button" href="<?php echo esc_url( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'taxonomies', 'edit' => $taxonomy['slug'] ], admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Edit', 'my-cpt-ui' ); ?></a>
+                            <a class="button" href="<?php echo esc_url( add_query_arg( [ 'page' => 'my-cpt-ui-taxonomies', 'edit' => $taxonomy['slug'] ], admin_url( 'admin.php' ) ) ); ?>"><?php esc_html_e( 'Edit', 'my-cpt-ui' ); ?></a>
                             <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="my-cpt-ui__inline-form my-cpt-ui__delete-form" data-confirm-message="<?php esc_attr_e( 'Delete this taxonomy? This cannot be undone.', 'my-cpt-ui' ); ?>">
                                 <?php wp_nonce_field( 'my_cpt_ui_delete_taxonomy' ); ?>
                                 <input type="hidden" name="action" value="my_cpt_ui_delete_taxonomy" />

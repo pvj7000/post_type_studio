@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $current_page = $_GET['page'] ?? 'my-cpt-ui';
 $base_url     = admin_url( 'admin.php' );
+$doc_url      = plugins_url( 'DOCUMENTATION.md', dirname( __DIR__ ) . '/my-cpt-ui.php' );
 ?>
 <div class="wrap my-cpt-ui">
     <h1 class="my-cpt-ui__title"><?php esc_html_e( 'Content Types', 'my-cpt-ui' ); ?></h1>
@@ -51,5 +52,11 @@ $base_url     = admin_url( 'admin.php' );
                 <button type="button" class="button button-primary" id="my-cpt-ui-confirm__accept"><?php esc_html_e( 'Delete item', 'my-cpt-ui' ); ?></button>
             </div>
         </div>
+    </div>
+
+    <div class="my-cpt-ui__footer">
+        <a class="my-cpt-ui__doc-link" href="<?php echo esc_url( $doc_url ); ?>" target="_blank" rel="noreferrer noopener">
+            <?php esc_html_e( 'Open the My CPT UI documentation', 'my-cpt-ui' ); ?>
+        </a>
     </div>
 </div>

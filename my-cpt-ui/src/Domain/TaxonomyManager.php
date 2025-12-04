@@ -68,7 +68,7 @@ class TaxonomyManager {
         $original_slug = sanitize_key( $_POST['original_slug'] ?? '' );
 
         if ( ! empty( $errors ) ) {
-            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'taxonomies', 'errors' => urlencode( wp_json_encode( $errors ) ) ], admin_url( 'admin.php' ) ) );
+            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-taxonomies', 'errors' => urlencode( wp_json_encode( $errors ) ) ], admin_url( 'admin.php' ) ) );
             exit;
         }
 
@@ -81,7 +81,7 @@ class TaxonomyManager {
 
         do_action( 'my_cpt_ui_taxonomy_saved', $sanitized );
 
-        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'taxonomies', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
+        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-taxonomies', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
         exit;
     }
 
@@ -94,7 +94,7 @@ class TaxonomyManager {
 
         $slug = sanitize_key( $_POST['slug'] ?? '' );
         if ( empty( $slug ) ) {
-            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'taxonomies' ], admin_url( 'admin.php' ) ) );
+            wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-taxonomies' ], admin_url( 'admin.php' ) ) );
             exit;
         }
 
@@ -104,7 +104,7 @@ class TaxonomyManager {
 
         do_action( 'my_cpt_ui_taxonomy_deleted', $slug );
 
-        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui', 'tab' => 'taxonomies', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
+        wp_redirect( add_query_arg( [ 'page' => 'my-cpt-ui-taxonomies', 'updated' => 'true' ], admin_url( 'admin.php' ) ) );
         exit;
     }
 }

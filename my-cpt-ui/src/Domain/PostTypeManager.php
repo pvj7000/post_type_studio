@@ -49,6 +49,8 @@ class PostTypeManager {
                     'public'          => $post_type->public,
                     'show_ui'         => $post_type->show_ui,
                     'show_in_rest'    => $post_type->show_in_rest,
+                    'rest_base'       => $post_type->slug,
+                    'rest_namespace'  => 'wp/v2',
                     'has_archive'     => $post_type->has_archive,
                     'hierarchical'    => $post_type->hierarchical,
                     'supports'        => $post_type->supports,
